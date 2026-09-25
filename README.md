@@ -59,7 +59,7 @@ Project 3/
 │   └── utils/
 ├── sql/
 ├── powerbi/
-│   └── pdf/                 # no Power BI PDF export was provided
+│   └── pdf/                 
 ├── reports/
 │   ├── forensic_audit_report/
 │   └── documentation/
