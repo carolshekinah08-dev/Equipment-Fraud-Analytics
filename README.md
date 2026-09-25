@@ -43,9 +43,10 @@ The production pipeline uses `DataCleaner`, explicit dtypes, guarded JSON parsin
 ## Limitations
 A high-RPM / zero-fuel record is a risk signal. Confirmed conclusions require invoice, contract, equipment-identity, payment, and source-system evidence.
 
-## Charts and dashboard evidence
-
-The equipment visual evidence is delivered in the Power BI export and forensic report because this repository does not contain standalone chart image files:
+## Power BI
+<img width="1512" height="853" alt="image" src="https://github.com/user-attachments/assets/cd7810fd-e244-49d1-a146-36610bed6d2a" />
+<img width="1456" height="856" alt="image" src="https://github.com/user-attachments/assets/c4367dd3-012f-4c89-87b1-3559da26fadc" />
+<img width="1447" height="858" alt="image" src="https://github.com/user-attachments/assets/3c752d7d-635a-4349-a5a5-8a596470bf35" />
 
 - [Power BI dashboard PDF](powerbi/Nexlyra_EQUIPMENT_FRAUD_pdf.pdf)
 - [Power BI dashboard workbook](powerbi/Nexlyra_EQUIPMENT_FRAUD_pbix.pbix)
