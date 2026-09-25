@@ -24,13 +24,14 @@ Power BI — DAX, Star Schema, Row-Level Security, What-If parameters
 1,000,000 crane/excavator telemetry + billing records with fields: Log_ID, Telemetry_Date, Site_Code, Vendor, Equipment_Type, Billed_Engine_Hours, Billed_Amount_USD, IoT_Telemetry_JSON (Base64-encoded GPS + RPM + fuel).
 
 ## Methodology
-Day	Focus	Key Work
-1	Excel & Power Query	Cleaned a 50K-row subset, built a crane-rate lookup table, flagged extreme overtime, set a 95th-percentile statistical audit threshold
-2	Python Data Engineering	Optimized memory 220.93MB → 87.74MB (-28% initial, -60% after JSON extraction), repaired 99,578 malformed JSON records, extracted RPM/Fuel/GPS fields
-3	Cryptography & Geospatial	Decoded all 1M Base64 GPS values (0 failures), flagged 83,371 static-GPS records
-4	SQL & Relational Modeling	Built a fact/dimension model, quarantined 83,281 fraud records, added a negative-fuel data-integrity trigger
-5	Statistical Validation	Ran a Welch t-test, OLS regression, IQR outlier detection, and Isolation Forest to stress-test the fraud rule
-6	Power BI Reporting	Star-schema dashboard, RLS by site manager, financial-impact scenario tool
+|Day |	Focus	| Key Work |
+|---|---:|---:|
+|1 |	Excel & Power Query |	Cleaned a 50K-row subset, built a crane-rate lookup table, flagged extreme overtime, set a 95th-percentile statistical audit threshold |
+|2 |Python Data Engineering	| Optimized memory 220.93MB → 87.74MB (-28% initial, -60% after JSON extraction), repaired 99,578 malformed JSON records, extracted RPM/Fuel/GPS fields |
+|3 |	Cryptography & Geospatial |	Decoded all 1M Base64 GPS values (0 failures), flagged 83,371 static-GPS records |
+|4 |	SQL & Relational Modeling |	Built a fact/dimension model, quarantined 83,281 fraud records, added a negative-fuel data-integrity trigger |
+|5 |	Statistical Validation |	Ran a Welch t-test, OLS regression, IQR outlier detection, and Isolation Forest to stress-test the fraud rule |
+|6 |	Power BI Reporting |	Star-schema dashboard, RLS by site manager, financial-impact scenario tool |
 
 ## Verified findings
 
