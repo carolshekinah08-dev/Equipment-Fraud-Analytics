@@ -12,10 +12,25 @@ Applied to one million rows, it flags **51,920 records** associated with **$391,
 This is evidence of a billing and telemetry anomaly requiring investigation, not a legal determination that every record is proven fraud.
 
 ## Problem Statement
-Records billed more than 20 engine hours while simultaneously showing RPM above 5,000 and fuel consumption of exactly 0 LPH — a physically impossible operating state unless corroborated by an alternate power source or a verified sensor fault (no such evidence was found).
+A vendor was suspected of spoofing Engine RPM telemetry to simulate maximum workload and justify inflated invoices — but forgot to spoof the accompanying Fuel Flow Rate, creating a physically impossible billing pattern.
 
 ## Tech Stack
-Python (Pandas, memory-optimized 100,000-row chunk processing), SQLite, Power BI (DAX) 
+Excel — Power Query, PivotTables/PivotCharts, Data Validation, VLOOKUP/INDEX-MATCH
+Python — Pandas, NumPy, SciPy, Statsmodels, Scikit-learn, Matplotlib, Seaborn
+SQL — SQLite (CTEs, window functions, triggers, views, indexing)
+Power BI — DAX, Star Schema, Row-Level Security, What-If parameters
+
+## Data
+1,000,000 crane/excavator telemetry + billing records with fields: Log_ID, Telemetry_Date, Site_Code, Vendor, Equipment_Type, Billed_Engine_Hours, Billed_Amount_USD, IoT_Telemetry_JSON (Base64-encoded GPS + RPM + fuel).
+
+## Methodology
+Day	Focus	Key Work
+1	Excel & Power Query	Cleaned a 50K-row subset, built a crane-rate lookup table, flagged extreme overtime, set a 95th-percentile statistical audit threshold
+2	Python Data Engineering	Optimized memory 220.93MB → 87.74MB (-28% initial, -60% after JSON extraction), repaired 99,578 malformed JSON records, extracted RPM/Fuel/GPS fields
+3	Cryptography & Geospatial	Decoded all 1M Base64 GPS values (0 failures), flagged 83,371 static-GPS records
+4	SQL & Relational Modeling	Built a fact/dimension model, quarantined 83,281 fraud records, added a negative-fuel data-integrity trigger
+5	Statistical Validation	Ran a Welch t-test, OLS regression, IQR outlier detection, and Isolation Forest to stress-test the fraud rule
+6	Power BI Reporting	Star-schema dashboard, RLS by site manager, financial-impact scenario tool
 
 ## Verified findings
 
