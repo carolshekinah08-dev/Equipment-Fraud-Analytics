@@ -1,0 +1,15 @@
+2026-09-03 03:35:15,509 | INFO | nexlyra.pipeline | Pipeline start. input=C:\Users\Carol Shekinah\Desktop\Project 3\data\raw\nexlyra_equipment_fraud_1M_carol_reasoning.csv output=C:\Users\Carol Shekinah\Desktop\Project 3\data\processed\nexlyra_day2_processed.csv chunk_size=100000
+2026-09-03 03:35:15,509 | INFO | nexlyra.pipeline | Loading source data in chunks
+2026-09-03 03:35:15,924 | INFO | nexlyra.pipeline | Cleaning chunk 1 with 100000 rows
+2026-09-03 03:35:18,996 | INFO | nexlyra.pipeline | Cleaning chunk 2 with 100000 rows
+2026-09-03 03:35:22,115 | INFO | nexlyra.pipeline | Cleaning chunk 3 with 100000 rows
+2026-09-03 03:35:25,551 | INFO | nexlyra.pipeline | Cleaning chunk 4 with 100000 rows
+2026-09-03 03:35:28,569 | INFO | nexlyra.pipeline | Cleaning chunk 5 with 100000 rows
+2026-09-03 03:35:31,706 | INFO | nexlyra.pipeline | Cleaning chunk 6 with 100000 rows
+2026-09-03 03:35:34,629 | INFO | nexlyra.pipeline | Cleaning chunk 7 with 100000 rows
+2026-09-03 03:35:37,610 | INFO | nexlyra.pipeline | Cleaning chunk 8 with 100000 rows
+2026-09-03 03:35:40,484 | INFO | nexlyra.pipeline | Cleaning chunk 9 with 100000 rows
+2026-09-03 03:35:43,521 | INFO | nexlyra.pipeline | Cleaning chunk 10 with 100000 rows
+2026-09-03 03:35:46,220 | INFO | nexlyra.pipeline | Pipeline completed successfully. rows=1000000 invalid_timestamps=0 invalid_currency=0
+2026-09-03 03:37:33,889 | INFO | nexlyra.pipeline | Pipeline start. input=C:\Users\Carol Shekinah\Desktop\Project 3\data\raw\nexlyra_equipment_fraud_1M_carol_reasoning.csv output=C:\Users\Carol Shekinah\Desktop\Project 3\data\processed\nexlyra_day2_processed.csv chunk_size=100000
+2026-09-03 03:37:33,890 | ERROR | nexlyra.pipeline | Refusing to overwrite existing output without --overwrite: C:\Users\Carol Shekinah\Desktop\Project 3\data\processed\nexlyra_day2_processed.csv
