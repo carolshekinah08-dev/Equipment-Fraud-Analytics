@@ -11,6 +11,12 @@ Applied to one million rows, it flags **51,920 records** associated with **$391,
 
 This is evidence of a billing and telemetry anomaly requiring investigation, not a legal determination that every record is proven fraud.
 
+## Problem Statement
+Records billed more than 20 engine hours while simultaneously showing RPM above 5,000 and fuel consumption of exactly 0 LPH — a physically impossible operating state unless corroborated by an alternate power source or a verified sensor fault (no such evidence was found).
+
+## Tech Stack
+Python (Pandas, memory-optimized 100,000-row chunk processing), SQLite, Power BI (DAX) 
+
 ## Verified findings
 
 | Metric | Result |
